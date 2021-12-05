@@ -1,0 +1,80 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdk Version.compileSdk
+
+    defaultConfig {
+        applicationId "com.heptagon.heptagontaskappdemo"
+        minSdk Version.minSdk
+        targetSdk Version.targetSdk
+        versionCode Version.versionCode
+        versionName Version.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    viewBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+    implementation(AndroidCore.coreKtx)
+    implementation(AndroidCore.appcompat)
+    implementation(AndroidCore.materialDesign)
+    implementation(AndroidCore.constraintLayout)
+    implementation(AndroidCore.activityKtx)
+    implementation(AndroidCore.swipeRefreshLayout)
+    //implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    //Lifecycle
+    implementation(Lifecycle.viewModel)
+    implementation(Lifecycle.liveData)
+    implementation(Lifecycle.lifecycleCommon)
+    implementation(Lifecycle.lifecycleExt)
+
+    //Hilt
+    implementation(Hilt.hiltAndroid)
+    implementation(Hilt.hiltViewModel)
+    kapt(Hilt.daggerCompiler)
+    kapt(Hilt.hiltCompiler)
+
+    //Retrofit
+    implementation(Retrofit.retrofit)
+    implementation(Retrofit.retrofitConverterGson)
+    implementation(Retrofit.okhttpLoggingInterceptor)
+
+    //Kotlin Coroutines
+    Coroutines
+    implementation(Coroutines.core)
+    implementation(Coroutines.android)
+
+    implementation(ImageLoading.pixplicity)
+
+    //Testing
+    testImplementation (Testing.jUnit)
+    androidTestImplementation (Testing.extJUnit)
+    androidTestImplementation (Testing.espresso)
+
+
+}

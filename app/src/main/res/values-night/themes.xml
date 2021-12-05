@@ -1,0 +1,40 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.HeptagonTaskAppDemo" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/blue_500</item>
+        <item name="colorPrimaryVariant">@color/white</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorAccent">@color/blue_500</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/surface</item>
+        <item name="android:navigationBarColor" tools:targetApi="o">@color/surface</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="networkStatusView">
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">@dimen/dp8</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="networkStatusTextView">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="formsRecyclerStyle">
+        <item name="android:clipToPadding">false</item>
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:paddingTop">@dimen/dp4</item>
+    </style>
+
+
+    <style name="PrimaryEditText" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">@color/surface</item>
+        <item name="hintAnimationEnabled">true</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="backgroundTint">@color/blue_500</item>
+    </style>
+</resources>
